@@ -1,0 +1,56 @@
+<main>
+  <h3 class="card-text">We offer an explicit discount of: {{ discount }}</h3>
+
+  <!-- show only if there is a discount
+  <h3 class="fs-5" *ngIf="discount !== noDiscount">
+    {{ discount | percent }} Discount on all products!
+  </h3> -->
+
+  <mat-form-field>
+    <mat-label>Select a Category</mat-label>
+    <mat-select class="fs-5">
+      <mat-option *ngFor="let category of categoryList" [value]="category.id">
+        {{ category.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-stroked-button color="warn" (click)="viewProduct()">View Products using ViewChild</button>
+
+  <button mat-stroked-button color="primary" (click)="stopSpinner()">Show spinner if products exists using subject behaviour service</button>
+
+  <div *ngIf="showSpinner$ | async">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div *ngIf="showData">
+    <ng-container  *ngIf="renderProducts().length > 0">
+      <mat-grid-list color="secondary" cols="4" gutterSize="20px">
+        <mat-grid-tile  *ngFor="let product of renderProducts()" class="product-list">
+          <app-product-detail [product]="product"> </app-product-detail>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </ng-container>
+  </div>
+
+<router-outer>g</router-outer>
+
+  <!-- try template outlet
+  <h2>Enter your Name</h2>
+
+  <section class="">
+    <mat-form-field appearance="fill" class="">
+      <mat-label>Please enter your name...</mat-label>
+      <input matInput [(ngModel)]="clientName" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="buy()">Purchase</button>
+  </section>
+
+  <ng-container *ngIf="isPurchased">
+    <div class="alert alert-success">
+      <p>Thank you, {{ clientName }}, for shopping with us!</p>
+    </div>
+  </ng-container> -->
+
+
+</main>
