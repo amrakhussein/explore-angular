@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
@@ -25,6 +26,7 @@ const materialUI = [
   MatFormFieldModule,
   MatGridListModule,
   MatProgressSpinnerModule,
+  FlexLayoutModule,
 ];
 
 @NgModule({
