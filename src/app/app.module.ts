@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +25,10 @@ import { ProductsModule } from './products/products.module';
 import { TheFooterComponent } from './the-footer/the-footer.component';
 import { TheHeaderComponent } from './the-header/the-header.component';
 import { UsersComponent } from './users/users.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { ValidateEqualModule } from 'ng-validate-equal';
+import { SingleCommentComponent } from './single-comment/single-comment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +42,9 @@ import { UsersComponent } from './users/users.component';
     UsersComponent,
     CommentsComponent,
     ProductsWithDiscountComponent,
+    RegisterComponent,
+    LoginComponent,
+    SingleCommentComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +59,8 @@ import { UsersComponent } from './users/users.component';
     MatIconModule,
     MatListModule,
     HttpClientModule,
+    FormsModule,
+    ValidateEqualModule
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent],
